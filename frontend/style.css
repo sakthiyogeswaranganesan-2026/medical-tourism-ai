@@ -1,0 +1,838 @@
+/* =====================================================
+   MEDICALAI - FINAL STYLE
+   Landing + Login + Register + Medical AI Dashboard
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef5f7;
+    color: #222;
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   LANDING PAGE
+===================================================== */
+
+#landingPage {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #4facfe,
+        #00c6d7,
+        #0b8f87
+    );
+    color: white;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+    width: 100%;
+    padding: 20px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.08);
+}
+
+nav h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+}
+
+nav li {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+nav li:hover {
+    opacity: 0.75;
+}
+
+
+/* =====================================================
+   LANDING CONTENT
+===================================================== */
+
+.landing-content {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.landing-content h1 {
+    max-width: 850px;
+
+    font-size: 52px;
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.landing-content p {
+    max-width: 650px;
+
+    font-size: 20px;
+    line-height: 1.6;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   PAGE CONTAINER
+===================================================== */
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: #eef5f7;
+}
+
+
+/* =====================================================
+   LOGIN / REGISTER BOX
+===================================================== */
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   MEDICAL LOGO
+===================================================== */
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #e8f7f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+.logo span {
+    color: #0b8f87;
+}
+
+
+/* =====================================================
+   LOGIN / REGISTER HEADINGS
+===================================================== */
+
+.login-box h1 {
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 7px;
+
+    color: #0b7370;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   FORM LABELS
+===================================================== */
+
+label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 17px;
+    margin-bottom: 7px;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+input,
+select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #0b8f87;
+
+    box-shadow:
+        0 0 0 2px rgba(11, 143, 135, 0.1);
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.eye {
+    position: absolute;
+
+    right: 5px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    margin: 0;
+
+    padding: 8px;
+}
+
+
+/* =====================================================
+   MAIN BUTTON
+===================================================== */
+
+.main-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #0b8f87;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.main-button:hover {
+    background: #08736d;
+}
+
+
+/* Landing page button */
+
+.landing-content .main-button {
+    width: auto;
+
+    min-width: 180px;
+
+    padding: 15px 30px;
+
+    margin-top: 25px;
+
+    background: white;
+
+    color: #08736d;
+
+    font-size: 18px;
+}
+
+.landing-content .main-button:hover {
+    background: #08736d;
+
+    color: white;
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.secondary-button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 2px solid #0b8f87;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #0b8f87;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.secondary-button:hover {
+    background: #e8f7f5;
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+.forgot {
+    display: block;
+
+    margin: 18px auto;
+
+    border: none;
+
+    background: none;
+
+    color: #0b7370;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ACCOUNT TEXT
+===================================================== */
+
+.account-text {
+    text-align: center;
+
+    margin: 20px 0 10px;
+
+    color: #666;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #0b7370;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   MEDICAL AI APPLICATION
+===================================================== */
+
+.app-page {
+    min-height: 100vh;
+
+    background: #eef5f7;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.top-bar {
+    background: #0b7370;
+
+    color: white;
+
+    padding: 18px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar h2 {
+    margin-bottom: 4px;
+}
+
+.top-bar span {
+    font-size: 13px;
+
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.logout-button {
+    padding: 10px 18px;
+
+    border: 1px solid white;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.logout-button:hover {
+    background: white;
+
+    color: #0b7370;
+}
+
+
+/* =====================================================
+   MAIN MEDICAL CONTAINER
+===================================================== */
+
+.medical-container {
+    width: 92%;
+
+    max-width: 850px;
+
+    margin: 30px auto;
+}
+
+
+/* =====================================================
+   COMMON CARDS
+===================================================== */
+
+.welcome-card,
+.medical-card,
+.result-card {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   WELCOME CARD
+===================================================== */
+
+.welcome-card h2 {
+    color: #0b7370;
+
+    margin-bottom: 8px;
+}
+
+.welcome-card p {
+    color: #555;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   MEDICAL CARD
+===================================================== */
+
+.medical-card h2 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.small-text {
+    color: #777;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.medical-card select {
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   LOCATION BUTTON
+===================================================== */
+
+.location-button {
+    margin-top: 15px;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e7f5f4;
+
+    color: #0b7370;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.location-button:hover {
+    background: #d5efed;
+}
+
+
+/* =====================================================
+   LOCATION STATUS
+===================================================== */
+
+.location-status {
+    margin-top: 10px;
+
+    color: #0b7370;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FIND MEDICAL ASSISTANCE
+===================================================== */
+
+.find-button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #0b8f87;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+
+    transition: 0.2s;
+}
+
+.find-button:hover {
+    background: #08736d;
+}
+
+
+/* =====================================================
+   RESULT CARD
+===================================================== */
+
+.result-card {
+    border-left: 5px solid #0b8f87;
+}
+
+.result-card h3 {
+    color: #0b7370;
+
+    margin-bottom: 15px;
+}
+
+.result-card p {
+    margin-bottom: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   HOSPITAL RESULT
+===================================================== */
+
+.hospital-result {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.hospital-result:last-child {
+    border-bottom: none;
+}
+
+.hospital-result h4 {
+    color: #0b7370;
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+}
+
+.hospital-result p {
+    color: #555;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   HORIZONTAL LINE
+===================================================== */
+
+.result-card hr {
+    border: none;
+
+    border-top: 1px solid #ddd;
+
+    margin: 15px 0;
+}
+
+
+/* =====================================================
+   BUTTON CURSOR
+===================================================== */
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 16px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav h2 {
+        font-size: 25px;
+    }
+
+    nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav li {
+        font-size: 13px;
+    }
+
+    .landing-content {
+        min-height: calc(100vh - 130px);
+
+        padding: 30px 20px;
+    }
+
+    .landing-content h1 {
+        font-size: 36px;
+    }
+
+    .landing-content p {
+        font-size: 17px;
+    }
+
+    .login-box {
+        padding: 25px 20px;
+    }
+
+    .top-bar {
+        padding: 15px 20px;
+    }
+
+    .top-bar h2 {
+        font-size: 20px;
+    }
+
+    .logout-button {
+        padding: 8px 12px;
+
+        font-size: 13px;
+    }
+
+    .medical-container {
+        width: 94%;
+
+        margin-top: 20px;
+    }
+
+    .medical-card,
+    .welcome-card,
+    .result-card {
+        padding: 20px;
+    }
+
+    .medical-card h2 {
+        font-size: 18px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .landing-content h1 {
+        font-size: 30px;
+    }
+
+    .landing-content p {
+        font-size: 16px;
+    }
+
+    .login-box {
+        padding: 22px 16px;
+    }
+
+    .top-bar {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+}

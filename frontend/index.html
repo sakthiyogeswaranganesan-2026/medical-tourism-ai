@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedicalAI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         LANDING PAGE
+    ====================================================== -->
+
+    <section id="landingPage">
+
+        <nav>
+            <h2>MedicalAI</h2>
+
+            <ul>
+                <li onclick="showLanding()">Home</li>
+                <li onclick="showLogin()">Hospitals</li>
+                <li onclick="showLogin()">Doctors</li>
+                <li onclick="showLanding()">About</li>
+                <li onclick="showLanding()">Contact</li>
+            </ul>
+        </nav>
+
+        <div class="landing-content">
+
+            <h1>Welcome to Medical Tourism AI</h1>
+
+            <p>
+                AI-powered medical assistance to help you
+                find suitable healthcare facilities and doctors.
+            </p>
+
+            <button
+                class="main-button"
+                onclick="showLogin()"
+            >
+                <button onclick="showLogin()">Start AI</button>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOGIN PAGE
+    ====================================================== -->
+
+    <section id="loginPage" class="page hidden">
+
+        <div class="login-box">
+
+            <div class="logo">
+                <span>✚</span>
+            </div>
+
+            <h1>MedicalAI</h1>
+
+            <p class="subtitle">
+                Medical Emergency Assistance
+            </p>
+
+            <form id="loginForm">
+
+                <label for="loginEmail">
+                    Email ID
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="eye"
+                        onclick="togglePassword('loginPassword')"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="main-button"
+                >
+                    Login
+                </button>
+
+            </form>
+
+            <button
+                class="forgot"
+                onclick="forgotPassword()"
+            >
+                Forgot Password?
+            </button>
+
+            <p class="account-text">
+                Don't have an account?
+            </p>
+
+            <button
+                class="secondary-button"
+                onclick="showRegister()"
+            >
+                Create Account
+            </button>
+
+            <button
+                class="back-button"
+                onclick="showLanding()"
+            >
+                ← Back to Home
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CREATE ACCOUNT PAGE
+    ====================================================== -->
+
+    <section id="registerPage" class="page hidden">
+
+        <div class="login-box">
+
+            <div class="logo">
+                <span>✚</span>
+            </div>
+
+            <h1>Create Account</h1>
+
+            <p class="subtitle">
+                Create your MedicalAI account
+            </p>
+
+            <form id="registerForm">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="registerEmail">
+                    Email ID
+                </label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="10-digit mobile number"
+                    maxlength="10"
+                    required
+                >
+
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Minimum 6 characters"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="eye"
+                        onclick="togglePassword('registerPassword')"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Re-enter password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="eye"
+                        onclick="togglePassword('confirmPassword')"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="main-button"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+            <button
+                class="back-button"
+                onclick="showLogin()"
+            >
+                ← Back to Login
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MEDICAL AI APPLICATION
+    ====================================================== -->
+
+    <section id="appPage" class="app-page hidden">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div>
+                <h2>MedicalAI</h2>
+
+                <span>
+                    Medical Assistance & Healthcare Discovery
+                </span>
+            </div>
+
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="medical-container">
+
+            <!-- WELCOME -->
+
+            <div class="welcome-card">
+
+                <h2 id="welcomeUser">
+                    Welcome to MedicalAI
+                </h2>
+
+                <p>
+                    Tell us what kind of medical assistance
+                    you need and where you are located.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 CLINICAL PROBLEM
+            ================================================== -->
+
+            <div class="medical-card">
+
+                <h2>
+                    1. What kind of clinical problem do you have?
+                </h2>
+
+                <p class="small-text">
+                    Select the problem that best describes
+                    your situation.
+                </p>
+
+                <label for="clinicalProblem">
+                    Medical Problem
+                </label>
+
+                <select id="clinicalProblem">
+
+                    <option value="">
+                        Select your problem
+                    </option>
+
+                    <option value="Chest Pain">
+                        Chest Pain
+                    </option>
+
+                    <option value="Breathing Difficulty">
+                        Breathing Difficulty
+                    </option>
+
+                    <option value="Accident / Injury">
+                        Accident / Injury
+                    </option>
+
+                    <option value="Severe Bleeding">
+                        Severe Bleeding
+                    </option>
+
+                    <option value="Head Injury">
+                        Head Injury
+                    </option>
+
+                    <option value="Fever">
+                        Fever
+                    </option>
+
+                    <option value="Stomach Pain">
+                        Stomach Pain
+                    </option>
+
+                    <option value="Vomiting">
+                        Vomiting
+                    </option>
+
+                    <option value="Seizure">
+                        Seizure
+                    </option>
+
+                    <option value="Unconsciousness">
+                        Unconsciousness
+                    </option>
+
+                    <option value="Burn">
+                        Burn
+                    </option>
+
+                    <option value="Fracture">
+                        Fracture
+                    </option>
+
+                    <option value="Allergic Reaction">
+                        Allergic Reaction
+                    </option>
+
+                    <option value="Pregnancy Emergency">
+                        Pregnancy Emergency
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOCATION
+            ================================================== -->
+
+            <div class="medical-card">
+
+                <h2>
+                    2. Where are you currently located?
+                </h2>
+
+                <p class="small-text">
+                    Select your Tamil Nadu district and city.
+                </p>
+
+                <label for="district">
+                    District
+                </label>
+
+                <select id="district">
+
+                    <option value="">
+                        Select District
+                    </option>
+
+                </select>
+
+
+                <label for="city">
+                    City / Town
+                </label>
+
+                <select id="city">
+
+                    <option value="">
+                        Select City / Town
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="button"
+                    class="location-button"
+                    onclick="getCurrentLocation()"
+                >
+                    📍 Use My Current Location
+                </button>
+
+                <p
+                    id="locationStatus"
+                    class="location-status"
+                ></p>
+
+            </div>
+
+
+            <!-- =================================================
+                 FIND MEDICAL ASSISTANCE
+            ================================================== -->
+
+            <button
+                type="button"
+                class="find-button"
+                onclick="findMedicalHelp()"
+            >
+                Find Medical Assistance
+            </button>
+
+
+            <!-- =================================================
+                 SEARCH RESULT
+            ================================================== -->
+
+            <div
+                id="searchResult"
+                class="result-card hidden"
+            >
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
